@@ -31,7 +31,7 @@ const chartCopmonent=({data})=>{
     dataSource: {
       // Chart Configuration
       chart: {
-      caption:'languages',
+      caption:'Languages',
       theme:'fusion',
       decimal:0,
       pieRadius:"45%",
