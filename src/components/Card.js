@@ -10,7 +10,7 @@ const Card = () => {
       <img src={avatar_url} alt={name}/>
       <div>
         <h4>{name}</h4>
-        <p>@{twitter_username || 'cryptim'}</p>
+        <p>@{twitter_username || 'no username'}</p>
       </div>
       <a href={html_url}>Follow</a>
       <p className='bio'>{bio}</p>

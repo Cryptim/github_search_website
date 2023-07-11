@@ -1,11 +1,29 @@
 import React from 'react';
+import { getAuth,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+import {UserAuth} from '../context/Authcontext'
 import styled from 'styled-components';
-import { useAuth0 } from '@auth0/auth0-react';
-
+import { Login } from '../pages';
+import { Signin } from '../pages/signin';
+import { useState } from 'react';
+import {useHistory} from 'react-router-dom'
 const Navbar = () => {
-  const {isAuthenticated,loginWithRedirect,logout,user,isLoading}=useAuth0();
+  const {user,logOut}=UserAuth()
+  const history=useHistory()
+  const handleSignOut=async()=>{
+try {
+  await logOut()
+//  history('/')
+} catch (error) {
+  console.log(error);
+}
+  }
+
   return <Wrapper>
-    <button onClick={loginWithRedirect}>login</button>
+ <h1>
+logOut
+ {/* <link to='/login'>Login</link> */}
+ </h1>
+
   </Wrapper>;
 };
 

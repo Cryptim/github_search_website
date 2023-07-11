@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
+
+import { UserAuth } from '../context/Authcontext';
 import styled from 'styled-components';
 import loginImg from '../images/login-img.svg';
+import { useAuth0 } from '@auth0/auth0-react';
 const Login = () => {
-  
+  //
+  const {loginWithRedirect}=useAuth0()
+  const googleSignIn=UserAuth()
+  const handleGoogleSignIn=async()=>{
+try {
+  await googleSignIn()
+} catch (error) {
+  console.log(error);
+}
+  }
   return <Wrapper>
     <div className='container'>
 <img src={loginImg} alt='github user'/>
 <h1>github user</h1>
+{/* <button onClick={handleGoogleSignIn}>GoogleSignIn</button> */}
+<button className='btn' onClick={loginWithRedirect}>login/sign up</button>
     </div>
     </Wrapper>;
 };

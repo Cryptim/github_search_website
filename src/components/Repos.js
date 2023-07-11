@@ -7,7 +7,7 @@ const Repos = () => {
  const languages=repos.reduce((total,item)=>{
  const {language,stargazers_count}=item
  if(!language) return total
-  console.log(language)
+  // console.log(language)
   if(!total[language]){
    total[language]={label:language,value:1,stars:stargazers_count}
   }
@@ -20,18 +20,18 @@ const Repos = () => {
  }
  return total
  },{})
- console.log(languages);
+//  console.log(languages);
 const mostUsed=Object.values(languages).sort((a,b)=>{
   return b.value-a.value
  }).slice(0,5)
- console.log(mostUsed)
+//  console.log(mostUsed)
  //most stars per language
  const mostPopular=Object.values(languages).sort((a,b)=>{
   return b.stars-a.stars
  }).map((item)=>{
 return {...item,value:item.stars|| 1}
  }).slice(0,5)
- console.log(mostPopular);
+//  console.log(mostPopular);
  //stars and forks
  let {stars,forks}=repos.reduce((total,item)=>{
   const {stargazers_count,name,forks}=item;
