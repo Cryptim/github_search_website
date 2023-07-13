@@ -6,24 +6,27 @@ import { Login } from '../pages';
 import { Signin } from '../pages/signin';
 import { useState } from 'react';
 import {useHistory} from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react';
 const Navbar = () => {
-  const {user,logOut}=UserAuth()
-  const history=useHistory()
-  const handleSignOut=async()=>{
-try {
-  await logOut()
+  //
+  const {isAuthenticated,loginWithRedirect,logOut,user,isLoading}=useAuth0()
+  // const {user,logOut}=UserAuth()
+  // const history=useHistory()
+  // const handleSignOut=async()=>{
+// try {
+  // await logOut()
 //  history('/')
-} catch (error) {
-  console.log(error);
-}
-  }
+// } catch (error) {
+  // console.log(error);
+// }
+  // }
 
   return <Wrapper>
- <h1>
-logOut
+ {/* <h1> */}
+{/* logOut */}
  {/* <link to='/login'>Login</link> */}
- </h1>
-
+ {/* </h1> */}
+<button onClick={loginWithRedirect}>login</button>
   </Wrapper>;
 };
 

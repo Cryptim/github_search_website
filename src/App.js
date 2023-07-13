@@ -3,8 +3,10 @@ import { Dashboard, Login, PrivateRoute, AuthWrapper, Error } from './pages';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Signin } from './pages/signin';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { AuthContextProvider } from './context/Authcontext';
 function App() {
   return (
+    // <AuthContextProvider>
     <AuthWrapper>
     <Router>
       <Switch>  
@@ -28,6 +30,7 @@ function App() {
   </Switch>
     </Router>
     </AuthWrapper>
+    // </AuthContextProvider>
   );
 }
 

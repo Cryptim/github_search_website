@@ -19,7 +19,6 @@ try {
     <div className='container'>
 <img src={loginImg} alt='github user'/>
 <h1>github user</h1>
-{/* <button onClick={handleGoogleSignIn}>GoogleSignIn</button> */}
 <button className='btn' onClick={loginWithRedirect}>login/sign up</button>
     </div>
     </Wrapper>;
